@@ -1,0 +1,132 @@
+Flow report for MAXII
+Mon Nov 11 16:48:01 2024
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------+
+; Flow Summary                                                        ;
++-----------------------+---------------------------------------------+
+; Flow Status           ; Successful - Mon Nov 11 16:48:01 2024       ;
+; Quartus Prime Version ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Revision Name         ; MAXII                                       ;
+; Top-level Entity Name ; counter_0_19                                ;
+; Family                ; MAX II                                      ;
+; Device                ; EPM1270T144C5                               ;
+; Timing Models         ; Final                                       ;
+; Total logic elements  ; 100 / 1,270 ( 8 % )                         ;
+; Total pins            ; 18 / 116 ( 16 % )                           ;
+; Total virtual pins    ; 0                                           ;
+; UFM blocks            ; 0 / 1 ( 0 % )                               ;
++-----------------------+---------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 11/11/2024 16:45:40 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; MAXII               ;
++-------------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                     ;
++---------------------------------------+-------------------------------+---------------+-------------+----------------+
+; Assignment Name                       ; Value                         ; Default Value ; Entity Name ; Section Id     ;
++---------------------------------------+-------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID                 ; 1099314747429.173131473906816 ; --            ; --          ; --             ;
+; EDA_DESIGN_INSTANCE_NAME              ; NA                            ; --            ; --          ; debounce_tb    ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH  ; debounce_tb                   ; --            ; --          ; eda_simulation ;
+; EDA_OUTPUT_DATA_FORMAT                ; Verilog Hdl                   ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                   ; QuestaSim (Verilog)           ; <None>        ; --          ; --             ;
+; EDA_TEST_BENCH_ENABLE_STATUS          ; TEST_BENCH_MODE               ; --            ; --          ; eda_simulation ;
+; EDA_TEST_BENCH_FILE                   ; debounce_tb.v                 ; --            ; --          ; debounce_tb    ;
+; EDA_TEST_BENCH_MODULE_NAME            ; debounce_tb                   ; --            ; --          ; debounce_tb    ;
+; EDA_TEST_BENCH_NAME                   ; debounce_tb                   ; --            ; --          ; eda_simulation ;
+; EDA_TIME_SCALE                        ; 1 ps                          ; --            ; --          ; eda_simulation ;
+; MAX_CORE_JUNCTION_TEMP                ; 85                            ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP                ; 0                             ; --            ; --          ; --             ;
+; NUM_PARALLEL_PROCESSORS               ; 16                            ; --            ; --          ; --             ;
+; POWER_EXT_SUPPLY_VOLTAGE_TO_REGULATOR ; 3.3V                          ; --            ; --          ; --             ;
+; POWER_PRESET_COOLING_SOLUTION         ; No Heat Sink With Still Air   ; --            ; --          ; --             ;
+; PROJECT_OUTPUT_DIRECTORY              ; output_files                  ; --            ; --          ; --             ;
+; SMART_RECOMPILE                       ; On                            ; Off           ; --          ; --             ;
+; TOP_LEVEL_ENTITY                      ; counter_0_19                  ; MAXII         ; --          ; --             ;
++---------------------------------------+-------------------------------+---------------+-------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:01:24     ; 1.0                     ; 4729 MB             ; 00:01:32                           ;
+; Fitter                    ; 00:00:29     ; 1.0                     ; 6158 MB             ; 00:00:23                           ;
+; Assembler                 ; 00:00:14     ; 1.0                     ; 4667 MB             ; 00:00:09                           ;
+; TimeQuest Timing Analyzer ; 00:00:14     ; 1.0                     ; 4682 MB             ; 00:00:09                           ;
+; EDA Netlist Writer        ; 00:00:12     ; 1.0                     ; 4623 MB             ; 00:00:08                           ;
+; Total                     ; 00:02:33     ; --                      ; --                  ; 00:02:21                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                         ;
++---------------------------+------------------+------------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++---------------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis      ; LAPTOP-SCVRHSJC  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter                    ; LAPTOP-SCVRHSJC  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler                 ; LAPTOP-SCVRHSJC  ; Windows 10 ; 10.0       ; x86_64         ;
+; TimeQuest Timing Analyzer ; LAPTOP-SCVRHSJC  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer        ; LAPTOP-SCVRHSJC  ; Windows 10 ; 10.0       ; x86_64         ;
++---------------------------+------------------+------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off MAXII -c MAXII
+quartus_fit --read_settings_files=off --write_settings_files=off MAXII -c MAXII
+quartus_asm --read_settings_files=off --write_settings_files=off MAXII -c MAXII
+quartus_sta MAXII -c MAXII
+quartus_eda --read_settings_files=off --write_settings_files=off MAXII -c MAXII
+
+
+

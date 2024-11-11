@@ -1,0 +1,25 @@
+module counting_logic (
+    input wire clk,         
+    input wire reset,         
+    output reg count,
+    output reg running
+);
+    // 计数逻辑
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            count <= 5'd0;      // 复位计数器到0
+            running <= 1'b1;    // 恢复运行
+        end
+        else if (pause_clean) begin
+            running <= ~running; // 切换运行/暂停状态
+        end
+        else if (running) begin
+            if (count == 5'd19) begin
+                count <= 5'd0;  // 计数到19后回到0
+            end
+            else begin
+                count <= count + 5'd1;  // 每秒加1
+            end
+        end
+    end
+endmodule

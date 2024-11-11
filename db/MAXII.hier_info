@@ -1,0 +1,163 @@
+|counter_0_19
+clk => clk.IN4
+reset => reset.IN1
+pause => pause.IN1
+disp[0] << display:display.segment
+disp[1] << display:display.segment
+disp[2] << display:display.segment
+disp[3] << display:display.segment
+disp[4] << display:display.segment
+disp[5] << display:display.segment
+disp[6] << display:display.segment
+anode_ctrl[0] << display:display.anode_ctrl
+anode_ctrl[1] << display:display.anode_ctrl
+anode_ctrl[2] << display:display.anode_ctrl
+anode_ctrl[3] << display:display.anode_ctrl
+anode_ctrl[4] << display:display.anode_ctrl
+anode_ctrl[5] << display:display.anode_ctrl
+anode_ctrl[6] << display:display.anode_ctrl
+anode_ctrl[7] << display:display.anode_ctrl
+
+
+|counter_0_19|debounce:debounce_pause
+clk => btn_clean~reg0.CLK
+clk => shift_reg[0].CLK
+clk => shift_reg[1].CLK
+clk => shift_reg[2].CLK
+btn => shift_reg[0].DATAIN
+btn_clean <= btn_clean~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|counter_0_19|debounce:debounce_reset
+clk => btn_clean~reg0.CLK
+clk => shift_reg[0].CLK
+clk => shift_reg[1].CLK
+clk => shift_reg[2].CLK
+btn => shift_reg[0].DATAIN
+btn_clean <= btn_clean~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|counter_0_19|counting_logic:counting_logic
+clk => second_counter[0].CLK
+clk => second_counter[1].CLK
+clk => second_counter[2].CLK
+clk => second_counter[3].CLK
+clk => second_counter[4].CLK
+clk => second_counter[5].CLK
+clk => second_counter[6].CLK
+clk => count[0]~reg0.CLK
+clk => count[1]~reg0.CLK
+clk => count[2]~reg0.CLK
+clk => count[3]~reg0.CLK
+clk => count[4]~reg0.CLK
+reset_clean => second_counter[0].ACLR
+reset_clean => second_counter[1].ACLR
+reset_clean => second_counter[2].ACLR
+reset_clean => second_counter[3].ACLR
+reset_clean => second_counter[4].ACLR
+reset_clean => second_counter[5].ACLR
+reset_clean => second_counter[6].ACLR
+reset_clean => count[0]~reg0.ACLR
+reset_clean => count[1]~reg0.ACLR
+reset_clean => count[2]~reg0.ACLR
+reset_clean => count[3]~reg0.ACLR
+reset_clean => count[4]~reg0.ACLR
+reset_clean => running$latch.PRESET
+pause_clean => running$latch.LATCH_ENABLE
+pause_clean => second_counter[0].ENA
+pause_clean => count[4]~reg0.ENA
+pause_clean => count[3]~reg0.ENA
+pause_clean => count[2]~reg0.ENA
+pause_clean => count[1]~reg0.ENA
+pause_clean => second_counter[6].ENA
+pause_clean => second_counter[5].ENA
+pause_clean => second_counter[4].ENA
+pause_clean => second_counter[3].ENA
+pause_clean => second_counter[2].ENA
+pause_clean => second_counter[1].ENA
+pause_clean => count[0]~reg0.ENA
+count[0] <= count[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[1] <= count[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[2] <= count[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[3] <= count[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[4] <= count[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+running <= running$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|counter_0_19|decoder:decoder
+count[0] => Div0.IN8
+count[0] => Mod0.IN8
+count[1] => Div0.IN7
+count[1] => Mod0.IN7
+count[2] => Div0.IN6
+count[2] => Mod0.IN6
+count[3] => Div0.IN5
+count[3] => Mod0.IN5
+count[4] => Div0.IN4
+count[4] => Mod0.IN4
+disp0[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+disp0[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+disp0[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+disp0[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+disp0[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+disp0[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+disp0[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+disp1[0] <= <GND>
+disp1[1] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+disp1[2] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+disp1[3] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+disp1[4] <= WideNor0.DB_MAX_OUTPUT_PORT_TYPE
+disp1[5] <= WideNor0.DB_MAX_OUTPUT_PORT_TYPE
+disp1[6] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|counter_0_19|display:display
+clk => segment[0]~reg0.CLK
+clk => segment[1]~reg0.CLK
+clk => segment[2]~reg0.CLK
+clk => segment[3]~reg0.CLK
+clk => segment[4]~reg0.CLK
+clk => segment[5]~reg0.CLK
+clk => segment[6]~reg0.CLK
+clk => anode_ctrl[0]~reg0.CLK
+clk => anode_ctrl[1]~reg0.CLK
+clk => anode_ctrl[2]~reg0.CLK
+clk => anode_ctrl[3]~reg0.CLK
+clk => anode_ctrl[4]~reg0.CLK
+clk => anode_ctrl[5]~reg0.CLK
+clk => anode_ctrl[6]~reg0.CLK
+clk => anode_ctrl[7]~reg0.CLK
+clk => scan_index[0].CLK
+clk => scan_index[1].CLK
+clk => scan_index[2].CLK
+disp0[0] => Selector6.IN4
+disp0[1] => Selector5.IN4
+disp0[2] => Selector4.IN4
+disp0[3] => Selector3.IN4
+disp0[4] => Selector2.IN4
+disp0[5] => Selector1.IN4
+disp0[6] => Selector0.IN4
+disp1[0] => Selector6.IN5
+disp1[1] => Selector5.IN5
+disp1[2] => Selector4.IN5
+disp1[3] => Selector3.IN5
+disp1[4] => Selector2.IN5
+disp1[5] => Selector1.IN5
+disp1[6] => Selector0.IN5
+segment[0] <= segment[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+segment[1] <= segment[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+segment[2] <= segment[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+segment[3] <= segment[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+segment[4] <= segment[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+segment[5] <= segment[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+segment[6] <= segment[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+anode_ctrl[0] <= anode_ctrl[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+anode_ctrl[1] <= anode_ctrl[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+anode_ctrl[2] <= anode_ctrl[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+anode_ctrl[3] <= anode_ctrl[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+anode_ctrl[4] <= anode_ctrl[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+anode_ctrl[5] <= anode_ctrl[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+anode_ctrl[6] <= anode_ctrl[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+anode_ctrl[7] <= anode_ctrl[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
